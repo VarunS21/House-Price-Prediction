@@ -78,28 +78,7 @@
                                     name="location"
                                     id="location"
                                     class="form-control"
-                                >
-                                    <option value="">
-                                        --Select Your Location--
-                                    </option>
-                                    <option value="">Alandur</option>
-                                    <option value="">Aminjikarai</option>
-                                    <option value="">Ambattur</option>
-                                    <option value="">Ayanavaram</option>
-                                    <option value="">Egmore</option>
-                                    <option value="">Guindy</option>
-                                    <option value="">Madhavaram</option>
-                                    <option value="">Manali</option>
-                                    <option value="">Maduravoyal</option>
-                                    <option value="">Mylapore</option>
-                                    <option value="">Mambalam</option>
-                                    <option value="">Purasawalkam</option>
-                                    <option value="">Perambur</option>
-                                    <option value="">Shollinganallur</option>
-                                    <option value="">Thiruvottiyur</option>
-                                    <option value="">Tondiarpet</option>
-                                    <option value="">Velachery</option>
-                                </select>
+                                ></select>
                             </div>
 
                             <!------------ PREDICTION - ESTIMATE PRICE  ------------>
@@ -131,6 +110,124 @@
             </div>
         </section>
         <script>
+            locations = [
+                "Select a Location",
+                "adambakam",
+                "adyar",
+                "agaramthen",
+                "alandur",
+                "alwarpet",
+                "ambattur",
+                "aminjikarai",
+                "anakaputhur",
+                "anna nagar",
+                "ayanambakkam",
+                "ayapakkam",
+                "besant nagar",
+                "chitlapakkam",
+                "chromepet",
+                "east tambaram",
+                "egmore",
+                "elandanur",
+                "gerugambakkam",
+                "gowrivakkam",
+                "guduvancheri",
+                "guindy",
+                "iyyappanthangal",
+                "kanathur reddikuppam",
+                "kandigai",
+                "karapakkam",
+                "kattankulathur",
+                "kattupakkam",
+                "keelkattalai",
+                "kelambakkam",
+                "kilpauk",
+                "kodambakkam",
+                "kolapakkam",
+                "kolathur",
+                "korattur",
+                "kottivakkam",
+                "kotturpuram",
+                "kovilambakkam",
+                "kovur",
+                "koyambedu",
+                "kundrathur",
+                "madambakkam",
+                "madhavaram",
+                "madipakkam",
+                "manapakkam",
+                "mangadu",
+                "maraimalai nagar",
+                "medavakkam",
+                "mogappair",
+                "moolacheri",
+                "moolakadai",
+                "mugalivakkam",
+                "nanganallur",
+                "nanmangalam",
+                "navallur",
+                "nesapakkam",
+                "oragadam",
+                "ottiyambakkam",
+                "padapai",
+                "padur",
+                "pallavaram",
+                "pallikaranai",
+                "pammal",
+                "pattabiram",
+                "perumalpattu",
+                "perumbakkam",
+                "perungalathur",
+                "perungudi",
+                "poonamallee",
+                "porur",
+                "pozhichalur",
+                "pudupakkam",
+                "purasawalkam",
+                "ragavendra colony",
+                "rajakilpakkam",
+                "ramapuram",
+                "royapettah",
+                "saidapet",
+                "saligramam",
+                "selaiyur",
+                "sembakkam",
+                "semmancheri",
+                "sholinganallur",
+                "singaperumal koil",
+                "siruseri",
+                "sithalapakkam",
+                "t nagar",
+                "thaiyur",
+                "thalambur",
+                "thandalam",
+                "thirumazhisai",
+                "thirumullaivoyal",
+                "thiruvanmiyur",
+                "thiruverkadu",
+                "thoraipakkam omr",
+                "tiruvottiyur",
+                "urapakkam",
+                "vadanemmeli",
+                "vadapalani",
+                "valasaravakkam",
+                "vanagaram",
+                "velachery",
+                "velappanchavadi",
+                "vengaivasal",
+                "vengambakkam",
+                "veppampattu",
+                "virugambakkam",
+                "west mambalam",
+                "west tambaram",
+            ];
+
+            var locationsEle = document.getElementById("location");
+            options = "";
+            locations.forEach((element) => {
+                options += <option>${element}</option>;
+            });
+            locationsEle.innerHTML = options;
             async function handleSubmit() {
                 event.preventDefault();
                 let area = document.getElementById("area").value;
