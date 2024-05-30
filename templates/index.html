@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HOMPRICE</title>
+        <link
+            rel="stylesheet"
+            href="{{url_for('static', filename='css/style.css')}}"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+
+        <!------------ NAVIGATION BAR ------------>
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container py-lg-2">
+                    <a href="#" class="navbar-brand">
+                        <img
+                            class="img-fluid d-inline-block align-top"
+                            src="../static/images/nav-logo.png"
+                            width="200"
+                            height=""
+                            alt="logo name"
+                            loading="lazy"
+                        />
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#myNavbar"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a href="#home" class="nav-link active">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#about" class="nav-link active"
+                                    >ABOUT US</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="/predict" class="nav-link active"
+                                    >PREDICTION</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a href="#contact" class="nav-link active"
+                                    >CONTACT</a
+                                >
+                            </li>
+                            <!-- <div class="d-grid gap-2 d-md-block">
+                                <button
+                                    type="button"
+                                    class="btn btn-outline-primary"
+                                >
+                                    Login
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-outline-primary"
+                                >
+                                    SignUp
+                                </button>
+                            </div> -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!------------ HOME PAGE ------------>
+
+        <section id="home">
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div
+                        class="text-center my-lg-3 mx-lg-3"
+                        style="font-size: 20px"
+                    >
+                        <h2 class="display-5 text-success my-lg-2 py-lg-2">
+                            Predict Your Home's Price Today!
+                        </h2>
+                        <h3 style="color: #034694">
+                            [Get an instant estimate based on relevant market
+                            data.]
+                        </h3>
+                        <p>
+                            Our user-friendly tool leverages real estate data to
+                            provide an accurate prediction of your house price.
+                            Simply enter details about your property and get a
+                            free, no-obligation estimate in minutes.
+                        </p>
+                    </div>
+                    <div
+                        class="my-lg-3 mx-lg-3 px-lg-2 py-lg-2"
+                        style="font-size: 17px"
+                    >
+                        <h3 class="text-danger">Benefits:</h3>
+                        <p>
+                            <strong>Gain Confidence: </strong>
+                            Make informed decisions about selling your home or
+                            setting a competitive asking price.
+                        </p>
+                        <p>
+                            <strong>Save Time & Money: </strong>
+                            Skip the hassle of traditional appraisals and get a
+                            free estimate instantly.
+                        </p>
+                        <p>
+                            <strong>Empower Yourself: </strong>
+                            Knowledge is power! Our tool equips you to navigate
+                            the real estate market with greater understanding.
+                        </p>
+                        <p>
+                            <strong>Free and Easy to Use: </strong>
+                            No sign-up required, and the process takes just
+                            minutes.
+                        </p>
+                        <p>
+                            <strong>Nationwide Coverage: </strong>
+                            Get an estimate regardless of your location (if
+                            applicable).
+                        </p>
+                        <p>
+                            <strong>Secure and Private: </strong>
+                            We value your privacy and keep your information
+                            confidential.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12 text-center py-lg-5 px-lg-5">
+                    <img
+                        class="img-fluid rounded-5"
+                        src="../static/images/home-img.jpg"
+                        alt="homepage image"
+                        width="700"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!------------ ABOUT US PAGE ------------>
+
+        <section id="about">
+            <div class="row">
+                <div class="col-lg-6 bg-secondary text-center py-lg-5 px-lg-5">
+                    <img
+                        class="img-fluid"
+                        src="../static/images/sapiens.png"
+                        alt="aboutpage image"
+                        width="500"
+                    />
+                </div>
+                <div class="col-lg-6">
+                    <div class="my-lg-3 mx-lg-3">
+                        <h2 class="text-center display-5 text-success">
+                            ABOUT US!
+                        </h2>
+                        <p>
+                            At <strong class="text-danger">HOMPRICE, </strong>we
+                            empower you with informed decisions about your real
+                            estate journey. Our house price prediction tool
+                            leverages the power of machine learning and real
+                            estate data to provide you with an instant and
+                            insightful estimate of your home's value.
+                        </p>
+                    </div>
+                    <div class="my-lg-3 mx-lg-3 px-lg-2 py-lg-2">
+                        <h3 style="color: #034694">Our Mission:</h3>
+                        <p>
+                            We believe in transparency and knowledge in the
+                            housing market. Our goal is to equip homeowners and
+                            buyers with a valuable resource to navigate the
+                            often-complex world of real estate pricing.
+                        </p>
+                        <h3 style="color: #034694">How it Works:</h3>
+                        <p>
+                            Our prediction tool is built on a robust machine
+                            learning model trained on extensive real estate
+                            data. By entering details about your property, such
+                            as square footage, location, and amenities, our
+                            model analyzes comparable properties and market
+                            trends to generate a personalized price estimate.
+                        </p>
+                        <h3 style="color: #034694">
+                            The Team Behind the Tool:
+                        </h3>
+                        <p>
+                            <strong class="text-danger">HOMPRICE </strong>is
+                            brought to you by a team of passionate data
+                            scientists and real estate enthusiasts dedicated to
+                            creating innovative solutions for the housing
+                            market. We are constantly working to improve our
+                            tool's accuracy and functionality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!------------ CONTACT PAGE ------------>
+
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div
+                                class="card-header text-center display-5 text-success"
+                            >
+                                Contact Us!
+                            </div>
+                            <div class="card-body">
+                                <form action="" method="post">
+                                    <!------------ CONTACT - FULL NAME ------------>
+
+                                    <div class="form-group mb-2">
+                                        <label for="name"
+                                            >Full Name:
+                                            <span class="text-danger"
+                                                >*</span
+                                            ></label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="name"
+                                            name="name"
+                                            placeholder="Enter Full name:"
+                                        />
+                                    </div>
+
+                                    <!------------ CONTACT - LAST NAME ------------>
+
+                                    <div class="form-group mb-2">
+                                        <label for="name"
+                                            >Last Name:
+                                            <span class="text-danger"
+                                                >*</span
+                                            ></label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="name"
+                                            name="name"
+                                            placeholder="Enter Last name:"
+                                        />
+                                    </div>
+
+                                    <!------------ CONTACT - CONTACT NO ------------>
+
+                                    <div class="form-group mb-2">
+                                        <label for="phone"
+                                            >Contact No.
+                                            <span class="text-danger"
+                                                >*</span
+                                            ></label
+                                        >
+                                        <input
+                                            type="number"
+                                            class="form-control"
+                                            id="phone"
+                                            placeholder="+91 93******97"
+                                        />
+                                    </div>
+
+                                    <!------------ CONTACT - EMAIL ------------>
+
+                                    <div class="form-group mb-2">
+                                        <label for="email"
+                                            >Email:
+                                            <span class="text-danger"
+                                                >*</span
+                                            ></label
+                                        >
+                                        <input
+                                            type="email"
+                                            class="form-control"
+                                            name="email"
+                                            id="email"
+                                            placeholder="yours@example.com"
+                                            aria-describedby="emailHelp"
+                                        />
+                                        <small id="emailHelp"
+                                            >(We'll never share your email with
+                                            anyone else.)</small
+                                        >
+                                    </div>
+
+                                    <!------------ CONTACT - MESSAGE ------------>
+
+                                    <div class="form-group mb-3">
+                                        <label for="message"
+                                            >Message:
+                                            <span class="text-muted"
+                                                >(Optional)</span
+                                            ></label
+                                        >
+                                        <textarea
+                                            name="message"
+                                            id="message"
+                                            class="form-control"
+                                            rows="3"
+                                            placeholder="Enter any message briefly!"
+                                        ></textarea>
+                                    </div>
+
+                                    <!------------ CONTACT - CHECKBOX ------------>
+
+                                    <div class="form-group mb-3">
+                                        <div class="form-check">
+                                            <input
+                                                type="text"
+                                                class="form-check-input"
+                                                name="agreement"
+                                                id="agreement"
+                                                value="agreement"
+                                            />
+                                            <label
+                                                for="agreement"
+                                                class="form-check-label"
+                                                >I agree to terms and
+                                                conditions.</label
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <!------------ CONTACT - SUBMIT ------------>
+
+                                    <div class="form-group mb-3 text-center">
+                                        <button
+                                            type="submit"
+                                            class="btn btn-outline-primary"
+                                        >
+                                            Submit
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 bg-dark">
+                        <div class="mapouter mt-lg-5 pt-lg-3 ps-lg-1 ms-lg-3">
+                            <div class="gmap_canvas">
+                                <iframe
+                                    class="gmap_iframe"
+                                    frameborder="0"
+                                    scrolling="no"
+                                    marginheight="0"
+                                    marginwidth="0"
+                                    src="https://maps.google.com/maps?width=600&amp;height=500&amp;hl=en&amp;q=Chennai&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                                ></iframe
+                                ><a href="https://embed-googlemap.com"
+                                    >embed google maps in website</a
+                                >
+                            </div>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    width: 600px;
+                                    height: 500px;
+                                }
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    width: 600px;
+                                    height: 500px;
+                                }
+                                .gmap_iframe {
+                                    width: 600px !important;
+                                    height: 500px !important;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

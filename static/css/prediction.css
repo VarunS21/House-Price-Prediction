@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../images/prediction-img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: blur(5px);
+}
+
+#prediction {
+    margin-top: 5%;
+}

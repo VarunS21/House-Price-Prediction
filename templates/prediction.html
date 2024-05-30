@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Prediction</title>
+        <link
+            rel="stylesheet"
+            href="{{url_for('static', filename='css/prediction.css')}}"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+
+        <div class="background"></div>
+
+        <section
+            id="prediction"
+            class="d-flex justify-content-center align-items-center"
+        >
+            <div class="container col-lg-4">
+                <div class="card">
+                    <div class="card-header display-5 text-center text-success">
+                        Predict Your Price!
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <!------------ PREDICTION - AREA  ------------>
+
+                            <div class="form-group mb-4">
+                                <label for="area"
+                                    >Area (Square Feet)<span class="text-danger"
+                                        >*</span
+                                    ></label
+                                >
+                                <input
+                                    id="area"
+                                    type="number"
+                                    class="form-control"
+                                    placeholder="(Ex:1000)"
+                                />
+                            </div>
+
+                            <!------------ PREDICTION - BHK  ------------>
+
+                            <div class="form-group mb-4">
+                                <label for="bhk">Select BHK</label>
+                                <select
+                                    name="bhk"
+                                    id="bhk"
+                                    class="form-control"
+                                >
+                                    <option value="">--Select BHK--</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                    <option value="">6</option>
+                                </select>
+                            </div>
+
+                            <!------------ PREDICTION - LOCATION  ------------>
+
+                            <div class="form-group mb-4">
+                                <label for="location">Location</label>
+                                <select
+                                    name="location"
+                                    id="location"
+                                    class="form-control"
+                                >
+                                    <option value="">
+                                        --Select Your Location--
+                                    </option>
+                                    <option value="">Alandur</option>
+                                    <option value="">Aminjikarai</option>
+                                    <option value="">Ambattur</option>
+                                    <option value="">Ayanavaram</option>
+                                    <option value="">Egmore</option>
+                                    <option value="">Guindy</option>
+                                    <option value="">Madhavaram</option>
+                                    <option value="">Manali</option>
+                                    <option value="">Maduravoyal</option>
+                                    <option value="">Mylapore</option>
+                                    <option value="">Mambalam</option>
+                                    <option value="">Purasawalkam</option>
+                                    <option value="">Perambur</option>
+                                    <option value="">Shollinganallur</option>
+                                    <option value="">Thiruvottiyur</option>
+                                    <option value="">Tondiarpet</option>
+                                    <option value="">Velachery</option>
+                                </select>
+                            </div>
+
+                            <!------------ PREDICTION - ESTIMATE PRICE  ------------>
+
+                            <div class="form-group mb-4">
+                                <button
+                                    onclick="handleSubmit()"
+                                    type="submit"
+                                    class="btn btn-primary form-control"
+                                >
+                                    Estimate Price
+                                </button>
+                            </div>
+
+                            <!------------ PREDICTION - OUTPUT  ------------>
+
+                            <div class="form-group">
+                                <div
+                                    style="text-align: center"
+                                    name="message"
+                                    id="message"
+                                    class="form-control"
+                                    rows="2"
+                                ></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            async function handleSubmit() {
+                event.preventDefault();
+                let area = document.getElementById("area").value;
+                let bhk = document.getElementById("bhk");
+                let bhkValue = bhk.options[bhk.selectedIndex].text;
+                let location = document.getElementById("location");
+                let locationValue =
+                    location.options[location.selectedIndex].text;
+
+                let requestBody = {
+                    area: area,
+                    location: locationValue,
+                    type: bhkValue,
+                };
+
+                let resp;
+
+                await fetch("http://127.0.0.1:5000/prediction", {
+                    method: "POST",
+                    body: JSON.stringify(requestBody),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8",
+                    },
+                })
+                    .then((response) => response.json())
+                    .then((json) => (resp = json));
+
+                document.getElementById("message").innerText =
+                    resp.price + " Lakhs";
+            }
+        </script>
+    </body>
+</html>
